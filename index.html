@@ -1,0 +1,767 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nomin Code — An autonomous engineering workspace</title>
+  <meta name="description" content="Describe the outcome. Nomin Code asks what it needs, plans it for your approval, then builds, tests and verifies the work — and keeps going through rate limits.">
+  <meta name="theme-color" content="#7132f5">
+
+  <link rel="icon" href="assets/logo-mark.png" type="image/png" sizes="256x256">
+  <link rel="apple-touch-icon" href="assets/logo-mark.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=36">
+
+  
+</head>
+<body>
+<!-- ======================================================================
+     Nav. Every action goes somewhere real: APP_URL is the live workspace.
+     ====================================================================== -->
+<header class="nav">
+  <nav class="nav__bar" aria-label="Primary">
+    <a class="brand" href="#top">
+      <img class="brand__mark" src="assets/logo-mark.png" alt="Nomin">
+      <span class="brand__word">Nomin Code</span>
+    </a>
+
+    <ul class="nav__links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#verify">Verification</a></li>
+      <li><a href="#standard">Standard</a></li>
+      <li><a href="#templates">Templates</a></li>
+      <li><a href="#platform">Trion&nbsp;1.5</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="#install">Install</a>
+      <a class="btn btn--fill" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+        Open Nomin Code
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ==================================================================
+       Hero
+       ================================================================== -->
+  <section class="hero" style="position: relative; overflow: hidden;">
+      
+    <div class="hero__art" aria-hidden="true">
+      <!-- A very large circle centred well below the fold: only its top rim
+           crosses the hero, so it reads as a lit horizon. Border + box-shadow
+           only — no filters, so it costs one rasterisation. -->
+    </div>
+
+    <div class="hero__inner" style="position: relative; z-index: 10;">
+      
+      
+
+      <h1 class="cinematic-title">
+        The Dawn of<br/>
+        Nomin <span class="aurora-text animated-aurora">Code</span>
+      </h1>
+
+      <p class="hero__sub astra-sub">
+        A new paradigm in autonomous engineering.<br/>
+        It sees your vision, reasons through complexity, and builds reality.
+      </p>
+
+      <div class="floating-pills">
+        <div class="magic-pill">
+          <div class="magic-pill-bg"></div>
+          <span class="magic-pill-text">Multimodal Reasoning</span>
+        </div>
+        <div class="magic-pill">
+          <div class="magic-pill-bg"></div>
+          <span class="magic-pill-text">Infinite Context</span>
+        </div>
+        <div class="magic-pill">
+          <div class="magic-pill-bg"></div>
+          <span class="magic-pill-text">Self-Correcting</span>
+        </div>
+      </div>
+
+      <div class="hero__actions">
+        <a class="btn btn--fill btn--lg" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+          Open the workspace
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#how">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7Z"/></svg>
+          See how it works
+        </a>
+      </div>
+
+      <!-- Install — the "how do I install it" answer -->
+      <div class="install" id="install">
+        <div class="install__tabs" role="tablist" aria-label="Install method">
+          <button class="install__tab" role="tab" aria-selected="true"  data-cmd="npx nomin-code@latest">npx</button>
+          <button class="install__tab" role="tab" aria-selected="false" data-cmd="npm i -g nomin-code">npm</button>
+          <button class="install__tab" role="tab" aria-selected="false" data-cmd="pnpm add -g nomin-code">pnpm</button>
+          <button class="install__tab" role="tab" aria-selected="false" data-cmd="brew install nomin-code">brew</button>
+          <button class="install__tab" role="tab" aria-selected="false" data-cmd="curl -fsSL https://nomin-ai-nine.vercel.app/install | bash">curl</button>
+        </div>
+
+        <div class="install__cmd">
+          <span class="prompt" aria-hidden="true">$</span>
+          <code id="install-cmd">npx nomin-code@latest</code>
+          <button class="copy" type="button" aria-label="Copy install command">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Workspace, with terminal panels floating beside it -->
+    <div class="scene">
+    <div class="stage">
+      <div class="mock" id="workspace">
+        <div class="mock__chrome">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="mock__title">
+            <img src="assets/logo-mark.png" alt="">
+            nomin — new session
+          </span>
+          <span class="mock__chip"><i></i> Trion 1.5</span>
+        </div>
+
+        <div class="mock__body">
+          <p class="mock__prompt">What are we building?</p>
+          <p class="mock__hint">Picking a starter writes its brief into the box. Read it, change anything, then send.</p>
+
+          <div class="composer">
+            <div class="composer__field">
+              <span class="typed"></span><span class="caret" aria-hidden="true"></span>
+            </div>
+
+            <div class="composer__row">
+              <div class="composer__tools">
+                <button class="tool" type="button" aria-label="Attach an image, a video, audio or a file">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <button class="tool" type="button" aria-label="Dictate">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+                </button>
+                <button class="tool" type="button" aria-label="Talk with Nomin">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 12v1M8 8v8M12 5v14M16 8v8M20 12v1"/></svg>
+                </button>
+                <button class="tool" type="button" aria-label="Open camera">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3v11H4V8Z"/><circle cx="12" cy="13" r="3.2"/></svg>
+                </button>
+              </div>
+
+              <span class="chip">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" stroke="none"/></svg>
+                Balanced
+              </span>
+
+              <button class="send" type="button" aria-label="Send">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="starters" role="tablist" aria-label="Starter briefs">
+            <button class="starter" role="tab" aria-selected="true"  type="button">Landing page</button>
+            <button class="starter" role="tab" aria-selected="false" type="button">Web app</button>
+            <button class="starter" role="tab" aria-selected="false" type="button">Dashboard</button>
+            <button class="starter" role="tab" aria-selected="false" type="button">Mini game</button>
+            <button class="starter" role="tab" aria-selected="false" type="button">Personal site</button>
+          </div>
+
+          <!-- The plan and the run live inside the session, where they
+               actually belong. Previously these floated behind the window
+               and were clipped mid-word. -->
+          <div class="panes">
+            <section class="pane">
+              <header class="pane__bar">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg>
+                plan.md
+                <span class="pane__state">approved</span>
+              </header>
+              <ol class="pane__body plan">
+                <li><b>1</b> scaffold routes</li>
+                <li><b>2</b> seed the data layer</li>
+                <li><b>3</b> write tests</li>
+                <li><b>4</b> verify the render</li>
+              </ol>
+            </section>
+
+            <section class="pane">
+              <header class="pane__bar">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-5-6-5M12 19h8"/></svg>
+                run
+                <span class="pane__state pane__state--live">running</span>
+              </header>
+              <ul class="pane__body log">
+                <li><i class="ok"></i> vitest — 38 passed</li>
+                <li><i class="ok"></i> GET /api/session → 200</li>
+                <li><i class="ok"></i> build 1.8s</li>
+                <li><i class="warn"></i> visual regression <em>unverified</em></li>
+                <li><i class="idle"></i> rate limit — resuming</li>
+              </ul>
+            </section>
+          </div>
+
+          <p class="mock__disclaimer">
+            Trion 1.5 can make mistakes. Nomin verifies work against real evidence —
+            check anything marked unverified.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       Figures
+       ================================================================== -->
+  <section style="padding-top:0">
+    <div class="shell">
+      <div class="figs">
+        <div class="fig"><div class="fig__n">4</div><div class="fig__l">Modes · fast to deep</div></div>
+        <div class="fig"><div class="fig__n">5</div><div class="fig__l">Starter briefs</div></div>
+        <div class="fig"><div class="fig__n">0</div><div class="fig__l">Setup steps</div></div>
+        <div class="fig"><div class="fig__n">24/7</div><div class="fig__l">Resumes through limits</div></div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- ==================================================================
+       How it works
+       ================================================================== -->
+  <section id="how">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">The loop</p>
+        <h2>Ask, plan, build, <span class="aurora-text">verify.</span></h2>
+        <p>Most agents start typing immediately. Nomin stops to work out what it is missing, shows you the plan, and only then touches the codebase.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <span class="step__n">01</span><h3>It asks</h3>
+          <p>Nomin surfaces the decisions it can't make for you — stack, scope, tone, constraints — instead of guessing and building the wrong thing.</p>
+        </article>
+        <article class="step">
+          <span class="step__n">02</span><h3>You approve</h3>
+          <p>A written plan lands before any work starts. Edit it, cut it down, or send it back. Nothing runs until you say so.</p>
+        </article>
+        <article class="step">
+          <span class="step__n">03</span><h3>It builds</h3>
+          <p>Files, tests and the running app — produced in one continuous session, with the canvas open so you watch it take shape.</p>
+        </article>
+        <article class="step">
+          <span class="step__n">04</span><h3>It verifies</h3>
+          <p>Every claim is checked against real evidence — a test run, a request, a rendered page. Anything unproven is labelled unverified.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       Features
+       ================================================================== -->
+  <section>
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Why it finishes</p>
+        <h2>Built for work that takes longer than one reply.</h2>
+      </div>
+
+      <div class="bento">
+        <article class="card card--wide card--feature">
+          <span class="card__icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+          <h3>Survives rate limits</h3>
+          <p>Long builds don't die halfway. Nomin holds the thread across limits and resumes exactly where it stopped — same plan, same context.</p>
+
+          <div class="mini" aria-hidden="true">
+            <div class="mini__bar"><span class="dots"><i></i><i></i><i></i></span> session 04</div>
+            <div class="mini__body">
+              <div><i class="ok"></i> step 3 of 4 complete</div>
+              <div><i class="warn"></i> rate limit reached</div>
+              <div><i class="warn"></i> holding context…</div>
+              <div><i class="ok"></i> resumed at step 4</div>
+            </div>
+            <div class="mini__track"><span></span></div>
+          </div>
+        </article>
+        <article class="card card--tall">
+          <span class="card__icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l2 2 4-4"/><path d="M12 3l7.5 3.5v5c0 5-3.2 8.6-7.5 10-4.3-1.4-7.5-5-7.5-10v-5L12 3Z"/></svg></span>
+          <h3>Evidence, not assertions</h3>
+          <p>"It works" isn't good enough. Nomin attaches the test output, the response, the screenshot — or marks the claim unverified and tells you.</p>
+        </article>
+        <article class="card card--wide">
+          <span class="card__icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M14 4v16"/></svg></span>
+          <h3>A live canvas</h3>
+          <p>The build renders next to the conversation. Watch the page appear, click through it, and redirect mid-flight instead of reading a diff.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" stroke="none"/></svg></span>
+          <h3>Pick your effort</h3>
+          <p>Balanced by default. Push to deep reasoning when the problem earns it, or drop to fast when you already know the shape of the answer.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+          <h3>Speak, show, or paste</h3>
+          <p>Dictate a brief, talk it through live, drop in an image, a video, a file — or point the camera at a whiteboard and let Nomin read it.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon" aria-hidden="true"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l5-5-5-5M12 19h8"/></svg></span>
+          <h3>Keyboard first</h3>
+          <p>The command palette reaches every session, every setting and every file without lifting your hands off the keys.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       Verification
+       ================================================================== -->
+  <section id="verify">
+    <div class="shell">
+      <div class="split">
+        <div class="split__copy">
+          <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Verification</p>
+          <h2>Nothing ships on the word of a model.</h2>
+          <p>Trion 1.5 can make mistakes. So Nomin treats its own output as a claim to be tested, not a result to be trusted — and shows you the receipts.</p>
+          <ul class="checks">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Tests are run, not described — you get the actual output.</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Endpoints are called and the real response is attached.</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Pages are rendered and checked before they're called done.</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span>Anything it couldn't prove is flagged <strong>unverified</strong>, in plain sight.</span></li>
+          </ul>
+        </div>
+
+        <div class="term" role="img" aria-label="Verification log: plan approved, 14 files written, 38 tests passed, endpoint returned 200, one visual regression marked unverified, awaiting review.">
+          <div class="term__bar"><span class="dots"><i></i><i></i><i></i></span> nomin — verify</div>
+          <div class="term__body">
+            <div class="row"><span class="dot dot--ok"></span> plan approved by you <span class="stamp">0:00</span></div>
+            <div class="row"><span class="dot dot--ok"></span> 14 files written <span class="stamp">1:12</span></div>
+            <div class="row"><span class="dot dot--ok"></span> vitest — 38 passed, 0 failed <span class="stamp">2:41</span></div>
+            <div class="row"><span class="dot dot--ok"></span> GET /api/session → 200 <span class="stamp">2:58</span></div>
+            <div class="row row--on"><span class="dot dot--wait"></span> visual regression <span class="tag-warn">unverified</span> <span class="stamp">3:04</span></div>
+            <div class="row"><span class="dot dot--idle"></span> awaiting your review <span class="stamp">—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       Templates
+       ================================================================== -->
+  <!-- ==================================================================
+       The standard. Taken verbatim from the quality bar Nomin actually
+       ships in its own starter briefs — this is the product's real
+       differentiator, not invented marketing copy.
+       ================================================================== -->
+  <section id="standard">
+    <div class="shell">
+      <div class="section-head section-head--center">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">The standard</p>
+        <h2>Every build is held to the same bar.</h2>
+        <p>Not a style guide you have to remember to ask for. It ships with every brief.</p>
+      </div>
+
+      <div class="std">
+        <article class="std__item">
+          <h3>Real copy everywhere</h3>
+          <p>No lorem ipsum. No “Feature one / Feature two”. No empty sections left as headings.</p>
+        </article>
+        <article class="std__item">
+          <h3>One type scale, one accent</h3>
+          <p>A single scale, held throughout. One accent colour, used sparingly.</p>
+        </article>
+        <article class="std__item">
+          <h3>Responsive from 360px</h3>
+          <p>Nothing overlapping, nothing clipped, no horizontal scroll — at any width.</p>
+        </article>
+        <article class="std__item">
+          <h3>Accessible by default</h3>
+          <p>Real landmarks, alt text, visible focus rings, and at least 4.5:1 contrast on body text.</p>
+        </article>
+        <article class="std__item">
+          <h3>Motion that explains</h3>
+          <p>Animation only where it clarifies something, and never longer than 400ms.</p>
+        </article>
+        <article class="std__item">
+          <h3>Nothing decorative that lies</h3>
+          <p>Every control does something. A button that does nothing is a bug, not a placeholder.</p>
+        </article>
+      </div>
+
+      <p class="std__closer">
+        “When you are done, run it, look at what it renders, and fix anything
+        that is a skeleton before you report.”
+        <span>— from the brief Nomin sends itself</span>
+      </p>
+
+      <div class="std__cta">
+        <a class="btn btn--fill btn--lg" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+          Open the workspace
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="templates">
+    <div class="shell">
+      <div class="section-head section-head--center">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Starters</p>
+        <h2>Three briefs, three finished pages.</h2>
+        <p>Pick one and its brief lands in the message box. Read it, change anything, then send.</p>
+      </div>
+
+      <div class="showcase">
+        <a class="show" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+          <div class="show__art show__art--iron">
+            <div class="show__nav"><span>Iron</span><span>Train</span><span>Join</span></div>
+            <h4>Built by discipline.<br>Forged in iron.</h4>
+            <p>A private strength gym in Bengaluru for people who train seriously.</p>
+          </div>
+          <div class="show__meta">
+            <span><strong>Built by discipline</strong><span>A dark, typographic landing page for a strength gym</span></span>
+            <span class="show__go" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+
+        <a class="show" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+          <div class="show__art show__art--lake">
+            <div class="show__nav"><span>Cabins</span><span>Lake</span><span>Book</span></div>
+            <h4>Stillwater</h4>
+            <p>Four cabins, one lake, and nothing scheduled.</p>
+          </div>
+          <div class="show__meta">
+            <span><strong>Stillwater</strong><span>A calm, editorial page for a lakeside retreat</span></span>
+            <span class="show__go" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+
+        <a class="show" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+          <div class="show__art show__art--gild">
+            <div class="show__nav"><span>Season</span><span>Repertoire</span><span>Tickets</span></div>
+            <h4>Severin Halbe</h4>
+            <p>Berlin · Vienna · Tokyo — the 2026 season</p>
+          </div>
+          <div class="show__meta">
+            <span><strong>Severin Halbe</strong><span>A dark, gilded page for a concert pianist</span></span>
+            <span class="show__go" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       Platform — expandable
+       ================================================================== -->
+  <section id="platform">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">The platform</p>
+        <h2>Trion 1.5, and the API around it.</h2>
+        <p>Expand any row for the detail.</p>
+      </div>
+
+      <div class="disclosures">
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="true">
+            <span class="disc__num">01</span> Trion 1.5 — the model behind the workspace
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel">
+            <div class="disc__inner">
+              <p>Trion 1.5 is tuned for long, interruptible engineering sessions rather than single-shot answers. It holds a plan across hours of work, survives rate limits without losing context, and is trained to stop and ask rather than guess when a requirement is missing.</p>
+              <p><strong>It can make mistakes.</strong> That is exactly why verification is not optional — every claim is checked against real evidence before it is presented as done, and anything unproven is labelled.</p>
+              <ul>
+                <li><b>Context</b><span>Holds the full plan, file tree and conversation across a session.</span></li>
+                <li><b>Modes</b><span>Fast, Balanced, Deep — pick the effort the problem deserves.</span></li>
+                <li><b>Multimodal</b><span>Reads images, video, audio, files and live camera input.</span></li>
+                <li><b>Resumption</b><span>Continues through rate limits from the exact step it stopped on.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="false">
+            <span class="disc__num">02</span> API access — drive the same loop from your own tooling
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel">
+            <div class="disc__inner">
+              <p>Open a session, stream the plan, approve it, and collect the evidence — programmatically. The API exposes the same ask → plan → build → verify loop the workspace uses, so anything you can do by hand you can automate.</p>
+
+              <div class="code">
+                <div class="code__tabs" role="tablist" aria-label="Language">
+                  <button class="code__tab" role="tab" aria-selected="true"  type="button">Python</button>
+                  <button class="code__tab" role="tab" aria-selected="false" type="button">TypeScript</button>
+                  <button class="code__tab" role="tab" aria-selected="false" type="button">cURL</button>
+                </div>
+                <div class="code__panel">
+                  <pre id="code-python"><span class="c-key">from</span> nomin <span class="c-key">import</span> Nomin
+
+client = <span class="c-fn">Nomin</span>(api_key=<span class="c-str">"nmn_..."</span>)
+
+session = client.sessions.<span class="c-fn">create</span>(
+    brief=<span class="c-str">"A dashboard for build sessions"</span>,
+    mode=<span class="c-str">"balanced"</span>,
+)
+
+<span class="c-com"># The plan arrives first — nothing runs until you approve it.</span>
+plan = session.<span class="c-fn">await_plan</span>()
+session.<span class="c-fn">approve</span>(plan.id)
+
+<span class="c-key">for</span> step <span class="c-key">in</span> session.<span class="c-fn">stream</span>():
+    <span class="c-fn">print</span>(step.status, step.evidence)</pre>
+                  <pre id="code-typescript" hidden><span class="c-key">import</span> { Nomin } <span class="c-key">from</span> <span class="c-str">"nomin"</span>;
+
+<span class="c-key">const</span> client = <span class="c-key">new</span> <span class="c-fn">Nomin</span>({ apiKey: <span class="c-str">"nmn_..."</span> });
+
+<span class="c-key">const</span> session = <span class="c-key">await</span> client.sessions.<span class="c-fn">create</span>({
+  brief: <span class="c-str">"A dashboard for build sessions"</span>,
+  mode: <span class="c-str">"balanced"</span>,
+});
+
+<span class="c-com">// The plan arrives first — nothing runs until you approve it.</span>
+<span class="c-key">const</span> plan = <span class="c-key">await</span> session.<span class="c-fn">awaitPlan</span>();
+<span class="c-key">await</span> session.<span class="c-fn">approve</span>(plan.id);
+
+<span class="c-key">for await</span> (<span class="c-key">const</span> step <span class="c-key">of</span> session.<span class="c-fn">stream</span>()) {
+  console.<span class="c-fn">log</span>(step.status, step.evidence);
+}</pre>
+                  <pre id="code-curl" hidden><span class="c-com"># Create a session</span>
+curl https://api.nomin.dev/v1/sessions \
+  -H <span class="c-str">"Authorization: Bearer $NOMIN_API_KEY"</span> \
+  -H <span class="c-str">"Content-Type: application/json"</span> \
+  -d <span class="c-str">'{"brief":"A dashboard for build sessions","mode":"balanced"}'</span>
+
+<span class="c-com"># Approve the plan, then stream the run</span>
+curl https://api.nomin.dev/v1/sessions/$ID/approve \
+  -H <span class="c-str">"Authorization: Bearer $NOMIN_API_KEY"</span> -X POST
+
+curl -N https://api.nomin.dev/v1/sessions/$ID/stream \
+  -H <span class="c-str">"Authorization: Bearer $NOMIN_API_KEY"</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="false">
+            <span class="disc__num">03</span> The workspace — what's on the surface
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel">
+            <div class="disc__inner">
+              <ul>
+                <li><b>Side panel</b><span>Every session, searchable, resumable.</span></li>
+                <li><b>Canvas</b><span>The build renders live beside the conversation.</span></li>
+                <li><b>Command palette</b><span>⌘K reaches every session, setting and file.</span></li>
+                <li><b>Dictate</b><span>Speak the brief instead of typing it.</span></li>
+                <li><b>Talk with Nomin</b><span>Full voice conversation while it works.</span></li>
+                <li><b>Camera</b><span>Point at a whiteboard or a screen and Nomin reads it.</span></li>
+                <li><b>Attachments</b><span>Images, video, audio and files as context.</span></li>
+                <li><b>Themes</b><span>Dark and light, remembered before first paint.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       FAQ
+       ================================================================== -->
+  <section id="faq">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">FAQ</p>
+        <h2>Getting started.</h2>
+      </div>
+
+      <div class="disclosures">
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="false">
+            <span class="disc__num">01</span> How do I open Nomin Code?
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel"><div class="disc__inner">
+            <p>It runs in the browser — there is nothing to install to get started. Open the workspace, describe what you want built, and approve the plan.</p>
+            <p><a class="btn btn--aurora" style="margin-top:14px" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">Open Nomin Code →</a></p>
+          </div></div>
+        </div>
+
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="false">
+            <span class="disc__num">02</span> How do I install the CLI?
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel"><div class="disc__inner">
+            <p>Pick your package manager from the tabs at the top of the page and copy the command. The quickest route is <strong>npx nomin-code@latest</strong>, which needs no global install.</p>
+            <p><a href="#install" style="color:var(--purple-pale)">Jump to the install commands →</a></p>
+          </div></div>
+        </div>
+
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="false">
+            <span class="disc__num">03</span> What happens when it hits a rate limit?
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel"><div class="disc__inner">
+            <p>The session holds. Nomin keeps the approved plan and the full context, waits out the limit, and resumes from the exact step it stopped on — you don't re-brief it and you don't lose the work already done.</p>
+          </div></div>
+        </div>
+
+        <div class="disc">
+          <button class="disc__btn" type="button" aria-expanded="false">
+            <span class="disc__num">04</span> What does "unverified" mean?
+            <svg class="disc__sign" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+          <div class="disc__panel"><div class="disc__inner">
+            <p>It means Nomin could not prove that claim with real evidence — it couldn't run the test, reach the endpoint, or render the page. Rather than quietly asserting success, it labels the claim so you know precisely which parts still need your eyes.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
+       CTA — the globe is the finale. A planet rising out of the card; its
+       land is literally written in Nomin's workflow sentence.
+       ================================================================== -->
+  <section id="start">
+    <div class="shell">
+      <div class="cta cta--globe">
+        <div class="cta__inner">
+          <p class="eyebrow" style="justify-content:center"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Start a session</p>
+          <h2>Describe the outcome.<br>Nomin takes it from there.</h2>
+          <p>No install, no toolchain, no machine to keep warm. Open a session from any device — the plan, the files and the evidence travel with it.</p>
+          <div class="cta__actions">
+            <a class="btn btn--fill btn--lg" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+              Open Nomin Code
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#install">Install the CLI</a>
+          </div>
+        </div>
+
+        <div class="horizon">
+          <div class="horizon__glow" aria-hidden="true"></div>
+          <div class="globe" role="img" aria-label="A globe whose continents are written in the sentence: describe the outcome, Nomin plans it, builds it and verifies it"
+               data-color="#E4DAFF"
+               data-phrase="describetheoutcomenominplansitbuildsitverifiesit">
+            <canvas></canvas>
+          </div>
+
+          <ul class="horizon__chips" aria-hidden="true">
+            <li class="chip chip--a"><i class="dot dot--ok"></i>plan approved</li>
+            <li class="chip chip--b"><i class="dot dot--ok"></i>vitest · 38 passed</li>
+            <li class="chip chip--c"><i class="dot dot--warn"></i>visual regression · unverified</li>
+            <li class="chip chip--d"><i class="dot dot--run"></i>rate limit · resuming</li>
+          </ul>
+
+          <p class="horizon__caption">Every continent is written in one sentence — <em>describe the outcome, Nomin plans it, builds it, verifies it.</em> Drag to spin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     Footer
+     ====================================================================== -->
+<footer class="footer">
+  <div class="shell">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <a class="brand" href="#top">
+          <img class="brand__mark" src="assets/logo-mark.png" alt="Nomin">
+          <span class="brand__word">Nomin Code</span>
+        </a>
+        <p>An autonomous engineering workspace. It asks, it plans, it builds — and it proves it.</p>
+        <a class="btn btn--aurora" href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">
+          Open the workspace
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#verify">Verification</a></li>
+          <li><a href="#standard">Standard</a></li>
+      <li><a href="#templates">Templates</a></li>
+          <li><a href="#platform">Trion 1.5</a></li>
+          <li><a href="https://nomin-ai-nine.vercel.app/" target="_blank" rel="noopener">Open workspace</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get started</h4>
+        <ul>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#faq">How to open</a></li>
+          <li><a href="#platform">API access</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#platform">Documentation</a></li>
+          <li><a href="#templates">Starter briefs</a></li>
+          <li><a href="#verify">Evidence model</a></li>
+          <li><a href="#top">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#top">Terms of Service</a></li>
+          <li><a href="#top">Privacy Policy</a></li>
+          <li><a href="#top">Acceptable Use</a></li>
+          <li><a href="#top">Security</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <span>© 2026 Nomin</span>
+      <span class="sep">|</span>
+      <span>Trion 1.5</span>
+      <span class="sep">|</span>
+      <span>Verified against real evidence</span>
+      <span class="footer__legal">
+        <a href="#top">Terms</a>
+        <a href="#top">Privacy</a>
+        <a href="#top">Status</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="motion.js?v=36" defer></script>
+<script src="globe.js?v=36" defer></script>
+</body>
+</html>

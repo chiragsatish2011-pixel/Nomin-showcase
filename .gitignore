@@ -1,0 +1,14 @@
+# Local Claude Code tooling (dev-server config, session state)
+.claude/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Vercel
+.vercel
