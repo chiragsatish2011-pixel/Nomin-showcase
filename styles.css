@@ -2609,3 +2609,24 @@ body::before {
 @media (max-width: 680px) {
   .horizon { --gw: min(300px, 80%); height: 330px !important; }
 }
+
+/* ==========================================================================
+   Hero kicker — the descriptive first line of the H1. Small and quiet so
+   the cinematic title still carries the hero; overrides the gradient
+   text-fill and !important sizing the title inherits.
+   ========================================================================== */
+.cinematic-title .hero__kicker {
+  display: block;
+  max-width: 560px;
+  margin: 0 auto 22px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--purple-pale);
+  -webkit-text-fill-color: var(--purple-pale);
+  background: none;
+  text-wrap: balance;
+}

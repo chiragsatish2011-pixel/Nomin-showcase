@@ -4,18 +4,66 @@
   <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nomin Code — An autonomous engineering workspace</title>
-  <meta name="description" content="Describe the outcome. Nomin Code asks what it needs, plans it for your approval, then builds, tests and verifies the work — and keeps going through rate limits.">
+  <title>Nomin Code — AI Engineering Workspace That Plans, Builds &amp; Verifies | Official Website</title>
+  <meta name="description" content="Nomin Code is the AI engineering workspace from Nomin. Describe what you want built; it asks what it needs, writes a plan for your approval, then builds, tests and verifies the work against real evidence.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://nomin-webshow.vercel.app/">
   <meta name="theme-color" content="#7132f5">
 
-  <link rel="icon" href="assets/logo-mark.png" type="image/png" sizes="256x256">
-  <link rel="apple-touch-icon" href="assets/logo-mark.png">
+  <!-- Social previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nomin">
+  <meta property="og:url" content="https://nomin-webshow.vercel.app/">
+  <meta property="og:title" content="Nomin Code — AI Engineering Workspace That Plans, Builds &amp; Verifies">
+  <meta property="og:description" content="Describe the outcome. Nomin Code asks what it needs, plans it for your approval, then builds, tests and verifies the work against real evidence.">
+  <meta property="og:image" content="https://nomin-webshow.vercel.app/assets/logo-mark.png">
+  <meta property="og:image:alt" content="Nomin logo">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nomin Code — AI Engineering Workspace That Plans, Builds &amp; Verifies">
+  <meta name="twitter:description" content="Describe the outcome. Nomin Code asks what it needs, plans it for your approval, then builds, tests and verifies the work against real evidence.">
+  <meta name="twitter:image" content="https://nomin-webshow.vercel.app/assets/logo-mark.png">
+
+  <link rel="icon" href="assets/logo-mark-256.png" type="image/png" sizes="256x256">
+  <link rel="apple-touch-icon" href="assets/logo-mark-256.png">
+
+  <!-- Structured data: who publishes the site, and what the site is. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://nomin-webshow.vercel.app/#organization",
+        "name": "Nomin",
+        "alternateName": ["NOMIN", "Nomin AI", "NOMIN AI"],
+        "url": "https://nomin-webshow.vercel.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://nomin-webshow.vercel.app/assets/logo-mark.png",
+          "width": 1265,
+          "height": 1243
+        },
+        "description": "Nomin makes Nomin Code, an AI engineering workspace that plans, builds and verifies software from a plain-language brief."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://nomin-webshow.vercel.app/#website",
+        "name": "Nomin Code",
+        "alternateName": ["Nomin", "NOMIN", "Nomin AI"],
+        "url": "https://nomin-webshow.vercel.app/",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://nomin-webshow.vercel.app/#organization" }
+      }
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=37">
 
   
 </head>
@@ -26,7 +74,7 @@
 <header class="nav">
   <nav class="nav__bar" aria-label="Primary">
     <a class="brand" href="#top">
-      <img class="brand__mark" src="assets/logo-mark.png" alt="Nomin">
+      <img class="brand__mark" src="assets/logo-mark-256.png" alt="Nomin">
       <span class="brand__word">Nomin Code</span>
     </a>
 
@@ -67,6 +115,7 @@
       
 
       <h1 class="cinematic-title">
+        <span class="hero__kicker">Nomin Code — the AI engineering workspace that plans, builds and verifies software</span>
         The Dawn of<br/>
         Nomin <span class="aurora-text animated-aurora">Code</span>
       </h1>
@@ -129,7 +178,7 @@
         <div class="mock__chrome">
           <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
           <span class="mock__title">
-            <img src="assets/logo-mark.png" alt="">
+            <img src="assets/logo-mark-256.png" alt="">
             nomin — new session
           </span>
           <span class="mock__chip"><i></i> Trion 1.5</span>
@@ -240,12 +289,53 @@
   <hr class="rule">
 
   <!-- ==================================================================
+       About — plain-language answer to "what is Nomin?". Every line here
+       restates something the rest of the page already shows; no new claims.
+       ================================================================== -->
+  <section id="about">
+    <div class="shell">
+      <div class="section-head">
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">About Nomin</p>
+        <h2>What is Nomin Code?</h2>
+        <p>Nomin Code is an AI engineering workspace made by Nomin. You describe the outcome you want in plain language; Nomin asks about anything it can't decide for you, writes a plan for your approval, then builds the files, runs the tests and checks the result against real evidence before calling it done. It runs in the browser, with a command-line tool for people who prefer the terminal.</p>
+      </div>
+
+      <div class="std">
+        <article class="std__item">
+          <h3>Who it's for</h3>
+          <p>Developers, designers, founders and makers who want a working build from a brief — and who want to see proof that it works rather than take a model's word for it.</p>
+        </article>
+        <article class="std__item">
+          <h3>What you can build</h3>
+          <p>Landing pages, web apps, dashboards, small browser games and personal sites. Each has a starter brief you can read and edit before sending.</p>
+        </article>
+        <article class="std__item">
+          <h3>How it's different</h3>
+          <p>A plan you approve before any code is written, a live canvas that renders the build as it happens, and every result checked by a test run, a request or a rendered page.</p>
+        </article>
+        <article class="std__item">
+          <h3>Long sessions</h3>
+          <p>Builds that take longer than one reply keep their plan and context, and pick up from the exact step they stopped on after a rate limit.</p>
+        </article>
+        <article class="std__item">
+          <h3>Any kind of input</h3>
+          <p>Type a brief, dictate it, talk it through, or attach images, video, audio and files — including a photo of a whiteboard.</p>
+        </article>
+        <article class="std__item">
+          <h3>The model behind it</h3>
+          <p>Nomin Code runs on Trion 1.5, with Fast, Balanced and Deep modes. It can make mistakes, so anything it couldn't prove is marked unverified.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================================
        How it works
        ================================================================== -->
   <section id="how">
     <div class="shell">
       <div class="section-head">
-        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">The loop</p>
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">The loop</p>
         <h2>Ask, plan, build, <span class="aurora-text">verify.</span></h2>
         <p>Most agents start typing immediately. Nomin stops to work out what it is missing, shows you the plan, and only then touches the codebase.</p>
       </div>
@@ -277,7 +367,7 @@
   <section>
     <div class="shell">
       <div class="section-head">
-        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Why it finishes</p>
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">Why it finishes</p>
         <h2>Built for work that takes longer than one reply.</h2>
       </div>
 
@@ -334,7 +424,7 @@
     <div class="shell">
       <div class="split">
         <div class="split__copy">
-          <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Verification</p>
+          <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">Verification</p>
           <h2>Nothing ships on the word of a model.</h2>
           <p>Trion 1.5 can make mistakes. So Nomin treats its own output as a claim to be tested, not a result to be trusted — and shows you the receipts.</p>
           <ul class="checks">
@@ -371,7 +461,7 @@
   <section id="standard">
     <div class="shell">
       <div class="section-head section-head--center">
-        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">The standard</p>
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">The standard</p>
         <h2>Every build is held to the same bar.</h2>
         <p>Not a style guide you have to remember to ask for. It ships with every brief.</p>
       </div>
@@ -421,7 +511,7 @@
   <section id="templates">
     <div class="shell">
       <div class="section-head section-head--center">
-        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Starters</p>
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">Starters</p>
         <h2>Three briefs, three finished pages.</h2>
         <p>Pick one and its brief lands in the message box. Read it, change anything, then send.</p>
       </div>
@@ -472,7 +562,7 @@
   <section id="platform">
     <div class="shell">
       <div class="section-head">
-        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">The platform</p>
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">The platform</p>
         <h2>Trion 1.5, and the API around it.</h2>
         <p>Expand any row for the detail.</p>
       </div>
@@ -592,7 +682,7 @@ curl -N https://api.nomin.dev/v1/sessions/$ID/stream \
   <section id="faq">
     <div class="shell">
       <div class="section-head">
-        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">FAQ</p>
+        <p class="eyebrow"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">FAQ</p>
         <h2>Getting started.</h2>
       </div>
 
@@ -650,7 +740,7 @@ curl -N https://api.nomin.dev/v1/sessions/$ID/stream \
     <div class="shell">
       <div class="cta cta--globe">
         <div class="cta__inner">
-          <p class="eyebrow" style="justify-content:center"><img class="eyebrow__mark" src="assets/logo-mark.png" alt="">Start a session</p>
+          <p class="eyebrow" style="justify-content:center"><img class="eyebrow__mark" src="assets/logo-mark-256.png" alt="">Start a session</p>
           <h2>Describe the outcome.<br>Nomin takes it from there.</h2>
           <p>No install, no toolchain, no machine to keep warm. Open a session from any device — the plan, the files and the evidence travel with it.</p>
           <div class="cta__actions">
@@ -693,7 +783,7 @@ curl -N https://api.nomin.dev/v1/sessions/$ID/stream \
     <div class="footer__cols">
       <div class="footer__brand">
         <a class="brand" href="#top">
-          <img class="brand__mark" src="assets/logo-mark.png" alt="Nomin">
+          <img class="brand__mark" src="assets/logo-mark-256.png" alt="Nomin">
           <span class="brand__word">Nomin Code</span>
         </a>
         <p>An autonomous engineering workspace. It asks, it plans, it builds — and it proves it.</p>

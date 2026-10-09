@@ -28,7 +28,9 @@ index.html     the page
 styles.css     tokens, components, responsive rules
 motion.js      scroll reveal, tabs, copy-to-clipboard, disclosures, composer demo
 globe.js       the interactive globe
-assets/        logo mark
+assets/        logo mark (full size for structured data, 256px for the page)
+robots.txt     allows all crawlers, points to the sitemap
+sitemap.xml    public pages for search engines — bump <lastmod> when content changes
 vercel.json    hosting config
 DESIGN.md      the Raycast style reference this started from
 ```

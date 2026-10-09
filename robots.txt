@@ -1,0 +1,5 @@
+# Allow every crawler, including Googlebot, to crawl the whole site.
+User-agent: *
+Allow: /
+
+Sitemap: https://nomin-webshow.vercel.app/sitemap.xml
