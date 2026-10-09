@@ -12,9 +12,11 @@ Then open <http://localhost:4173>.
 ## Deploy
 
 Vercel, as a static site. No build command and no output directory — point a
-project at this repo and it serves the root. `vercel.json` sets `cleanUrls`,
-long-lived caching for `assets/`, must-revalidate for HTML/CSS/JS, and a few
-baseline security headers.
+project at this repo and it serves the root. `vercel.json` sets long-lived
+caching for `assets/`, must-revalidate for HTML/CSS/JS, and a few baseline
+security headers. `cleanUrls` is off on purpose: it would redirect
+`google8471479049d77fa1.html` (Google Search Console ownership proof — do not
+delete it) to an extensionless URL that Google's verifier does not expect.
 
 **When you change CSS or JS, bump the `?v=` query in `index.html`.** The files
 are versioned by query string rather than hashed filenames, and a fix shipped
